@@ -120,18 +120,64 @@ export default function App() {
 
   // Dynamically update SEO head meta tags based on active page
   useEffect(() => {
-    if (!seo) return;
-    
-    // Determine active page override or global default
-    const pageSeo = seo.pages?.[activePage];
-    const title = pageSeo?.title || seo.title || "Yalini Exim | Premium Indian Sourcing & Sourcing Partner";
-    const description = pageSeo?.description || seo.description || "Leading global trading partner exporting premium restaurant tableware, high-grade kitchenware, fine dining tablecloths, Makrana marble, and southern Indian granites.";
-    const ogImage = pageSeo?.ogImage || seo.ogImage || "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80";
+    // Highly descriptive default fallbacks for elite B2B Indian export SEO representation
+    const defaultSeoFallback: Record<string, { title: string; description: string; keywords: string; ogImage: string }> = {
+      home: {
+        title: "Yalini Exim | Premium B2B Indian Exports & Sourcing Partner",
+        description: "Direct factory-to-port sourcing of premium Indian granite, high-grade restaurant crockeries, organic hotelware, and custom linens. Complete FOB/CIF customs clearance assured.",
+        keywords: "Yalini Exim, Indian exports, bulk granite sourcing, restaurant tableware wholesale, commercial hotelware, natural stones India, black galaxy granite, luxury hotel linens, organic tableware, B2B export, India trading partner",
+        ogImage: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80"
+      },
+      about: {
+        title: "About Us | Yalini Exim - Premium Indian Export Partner",
+        description: "Yalini Exim is a certified Indian trading and manufacturing sourcing partner. Learn about our commitment to quality, global logistics, and direct sourcing.",
+        keywords: "Yalini Exim about, export company India, trusted sourcing partner, Indian trading enterprise, merchant exporter India",
+        ogImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
+      },
+      collections: {
+        title: "Premium B2B Sourcing Collections & Catalog | Yalini Exim",
+        description: "Browse our bulk collections of Indian natural stones, Black Galaxy granite, luxury restaurant ceramics, hospitality linens, and biodegradable tableware.",
+        keywords: "bulk granite, hotel tableware catalog, hospitality supplies wholesale, marble tile export, bio-degradable tableware, Yalini catalog",
+        ogImage: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=80"
+      },
+      faq: {
+        title: "Import FAQ & Support | Yalini Exim Global Trade Desk",
+        description: "Find answers to frequently asked questions regarding international logistics, container loading (FCL/LCL), customs documents, and MOQ parameters.",
+        keywords: "import FAQ, ocean freight FAQ, FCL LCL shipping, customs export documents, India port shipping guidelines",
+        ogImage: "https://images.unsplash.com/photo-1553484771-047a44eee27f?auto=format&fit=crop&w=1200&q=80"
+      },
+      contact: {
+        title: "Contact Our Export Desk | Request Custom Quotation",
+        description: "Get in touch with Yalini Exim’s B2B coordinators. Request FOB/CIF pricing, customized packing specifications, and direct factory-door quotes.",
+        keywords: "contact exporter India, request quotation CIF, FOB shipping quote, Yalini Exim address, export phone number",
+        ogImage: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80"
+      },
+      more: {
+        title: "B2B Export Trade Portal & Live GPS Shipment Tracking | Yalini Exim",
+        description: "Explore industry blogs, latest logistics updates, and track your container shipments with our live GPS-integrated tracking dashboard.",
+        keywords: "live container tracking, B2B export blog, trade logistics news, Indian port tracking, maritime blog",
+        ogImage: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1200&q=80"
+      },
+      profile: {
+        title: "My Business Profile | Yalini Exim B2B Client Area",
+        description: "Manage your trade preferences, view saved products for comparison, and access your previous inquiry history in the client profile portal.",
+        keywords: "client profile, B2B user portal, trade history, saved products comparison",
+        ogImage: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80"
+      }
+    };
 
-    // Update document title
+    const fallback = defaultSeoFallback[activePage] || defaultSeoFallback.home;
+    const pageSeo = seo?.pages?.[activePage];
+
+    const title = pageSeo?.title || fallback.title;
+    const description = pageSeo?.description || fallback.description;
+    const keywords = pageSeo?.keywords || fallback.keywords;
+    const ogImage = pageSeo?.ogImage || fallback.ogImage;
+
+    // 1. Update Document Title
     document.title = title;
 
-    // Update meta description
+    // 2. Update Meta Description
     let metaDesc = document.querySelector('meta[name="description"]');
     if (!metaDesc) {
       metaDesc = document.createElement('meta');
@@ -140,7 +186,25 @@ export default function App() {
     }
     metaDesc.setAttribute('content', description);
 
-    // Update OpenGraph Title
+    // 3. Update Meta Keywords
+    let metaKeys = document.querySelector('meta[name="keywords"]');
+    if (!metaKeys) {
+      metaKeys = document.createElement('meta');
+      metaKeys.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeys);
+    }
+    metaKeys.setAttribute('content', keywords);
+
+    // 4. Update Canonical Link
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement('link');
+      canonicalLink.setAttribute('rel', 'canonical');
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute('href', `${window.location.origin}${window.location.pathname}?page=${activePage}`);
+
+    // 5. Update OpenGraph Title
     let ogTitle = document.querySelector('meta[property="og:title"]');
     if (!ogTitle) {
       ogTitle = document.createElement('meta');
@@ -149,7 +213,7 @@ export default function App() {
     }
     ogTitle.setAttribute('content', title);
 
-    // Update OpenGraph Description
+    // 6. Update OpenGraph Description
     let ogDesc = document.querySelector('meta[property="og:description"]');
     if (!ogDesc) {
       ogDesc = document.createElement('meta');
@@ -158,7 +222,7 @@ export default function App() {
     }
     ogDesc.setAttribute('content', description);
 
-    // Update OpenGraph Image
+    // 7. Update OpenGraph Image
     let ogImg = document.querySelector('meta[property="og:image"]');
     if (!ogImg) {
       ogImg = document.createElement('meta');
@@ -166,6 +230,118 @@ export default function App() {
       document.head.appendChild(ogImg);
     }
     ogImg.setAttribute('content', ogImage);
+
+    // 8. Inject and Update Page-Specific JSON-LD Schema.org Structured Data
+    let schemaScript = document.getElementById('yalini-seo-schema') as HTMLScriptElement;
+    if (!schemaScript) {
+      schemaScript = document.createElement('script');
+      schemaScript.id = 'yalini-seo-schema';
+      schemaScript.type = 'application/ld+json';
+      document.head.appendChild(schemaScript);
+    }
+
+    let ldJson: any = {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": title,
+      "description": description,
+      "url": `${window.location.origin}${window.location.pathname}?page=${activePage}`
+    };
+
+    if (activePage === 'home') {
+      ldJson = {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Yalini Exim",
+        "description": "Premium B2B Indian Exports & Sourcing Partner",
+        "image": ogImage,
+        "telephone": "+919944823311",
+        "email": "ai.sarathbabu@gmail.com",
+        "url": window.location.origin,
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "IN",
+          "addressLocality": "Chennai",
+          "streetAddress": "Chennai Sourcing Hub"
+        },
+        "sameAs": [
+          "https://wa.me/919944823311"
+        ]
+      };
+    } else if (activePage === 'about') {
+      ldJson = {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Us | Yalini Exim",
+        "description": description,
+        "url": `${window.location.origin}${window.location.pathname}?page=${activePage}`,
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Yalini Exim",
+          "url": window.location.origin,
+          "logo": ogImage
+        }
+      };
+    } else if (activePage === 'collections') {
+      ldJson = {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "B2B Export Product Catalog | Yalini Exim",
+        "description": description,
+        "url": `${window.location.origin}${window.location.pathname}?page=${activePage}`,
+        "about": {
+          "@type": "Thing",
+          "name": "Premium Indian Exports, Granite, and Tableware"
+        }
+      };
+    } else if (activePage === 'faq') {
+      ldJson = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Minimum Order Quantity (MOQ)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our MOQs vary by product category. Generally, stone is shipped by container load or partial crates, tableware has flexible mixed container limits, and custom linens can be produced to order."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you provide custom branding (OEM/Private Label)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! We offer fully custom printing, sizing, and private labeling options on all tableware, FMCG food items, and hospitality linens."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What shipment terms do you support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We support standard FOB (Free On Board) and CIF (Cost, Insurance & Freight) shipping terms to all major global ports."
+            }
+          }
+        ]
+      };
+    } else if (activePage === 'contact') {
+      ldJson = {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Our Export Desk | Yalini Exim",
+        "description": description,
+        "url": `${window.location.origin}${window.location.pathname}?page=${activePage}`,
+        "mainEntity": {
+          "@type": "LocalBusiness",
+          "name": "Yalini Exim",
+          "telephone": "+919944823311",
+          "email": "ai.sarathbabu@gmail.com"
+        }
+      };
+    }
+
+    schemaScript.textContent = JSON.stringify(ldJson, null, 2);
 
   }, [activePage, seo]);
 
