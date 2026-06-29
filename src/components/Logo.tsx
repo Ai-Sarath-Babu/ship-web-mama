@@ -14,14 +14,14 @@ interface LogoProps {
 
 export default function Logo({ className = 'h-10', showText = true, variant = 'color' }: LogoProps) {
   const { lang } = useLanguage();
-  // Colors matching the uploaded corporate logo:
-  // Teal/Cyan body: #00A7D4 -> emerald-600 / cyan-500
-  // Orange containers: #FF7E3D -> orange-500
-  // Text Indigo: #2E3192 -> blue-600 / indigo-900
+  // Colors matching the green and white corporate theme:
+  // Emerald body: #059669 (emerald-600)
+  // Accent containers: #34D399 (emerald-400)
+  // Text Emerald: #047857 (emerald-700)
 
-  const tealColor = '#00A7D4';
-  const orangeColor = '#FF7E3D';
-  const textColor = variant === 'light' ? '#FFFFFF' : '#2E3192';
+  const tealColor = '#059669';
+  const orangeColor = '#34D399';
+  const textColor = variant === 'light' ? '#FFFFFF' : '#047857';
 
   return (
     <div className={`flex items-center gap-2.5 select-none ${className}`}>

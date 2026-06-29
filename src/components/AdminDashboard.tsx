@@ -1176,7 +1176,7 @@ export default function AdminDashboard({
                     <span className="text-xs text-gray-500 font-mono block">
                       https://yaliniexim.com/{seoSubTab === 'global' ? '' : `?page=${seoSubTab}`}
                     </span>
-                    <h5 className="text-lg font-medium text-blue-850 hover:underline cursor-pointer font-sans leading-snug line-clamp-1">
+                    <h5 className="text-lg font-medium text-emerald-700 hover:underline cursor-pointer font-sans leading-snug line-clamp-1">
                       {
                         seoSubTab === 'global'
                           ? (seoData.title || 'Yalini Exim | Premium Indian Sourcing & Exports')
