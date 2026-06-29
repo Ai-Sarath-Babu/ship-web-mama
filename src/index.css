@@ -19,6 +19,10 @@
   --neutral-light: #F7FAFC;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
   background-color: var(--neutral-light);

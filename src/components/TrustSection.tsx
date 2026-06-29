@@ -11,28 +11,28 @@ export default function TrustSection() {
   const { t, dir } = useLanguage();
 
   const icons = [
-    <div className="relative p-3 bg-gradient-to-tr from-blue-600 to-indigo-400 text-white rounded-xl shadow-lg border border-blue-400/20 animate-float-3d shrink-0">
-      <div className="absolute inset-0 bg-blue-500/20 blur-md rounded-full scale-110"></div>
+    <div className="relative p-3 bg-gradient-to-tr from-emerald-600 to-emerald-400 text-white rounded-xl shadow-lg border border-emerald-400/20 animate-float-3d shrink-0">
+      <div className="absolute inset-0 bg-emerald-500/20 blur-md rounded-full scale-110"></div>
       <Globe className="w-6 h-6 relative z-10" />
     </div>,
-    <div className="relative p-3 bg-gradient-to-tr from-red-600 to-rose-400 text-white rounded-xl shadow-lg border border-red-400/20 animate-float-3d-delayed shrink-0">
-      <div className="absolute inset-0 bg-red-500/20 blur-md rounded-full scale-110"></div>
+    <div className="relative p-3 bg-gradient-to-tr from-yellow-500 to-amber-400 text-emerald-950 rounded-xl shadow-lg border border-yellow-400/20 animate-float-3d-delayed shrink-0">
+      <div className="absolute inset-0 bg-yellow-500/20 blur-md rounded-full scale-110"></div>
       <ShieldAlert className="w-6 h-6 relative z-10" />
     </div>,
-    <div className="relative p-3 bg-gradient-to-tr from-amber-500 to-yellow-400 text-white rounded-xl shadow-lg border border-amber-400/20 animate-float-3d shrink-0">
-      <div className="absolute inset-0 bg-amber-500/20 blur-md rounded-full scale-110"></div>
+    <div className="relative p-3 bg-gradient-to-tr from-emerald-700 to-green-500 text-white rounded-xl shadow-lg border border-emerald-550/20 animate-float-3d shrink-0">
+      <div className="absolute inset-0 bg-emerald-700/20 blur-md rounded-full scale-110"></div>
       <BadgeDollarSign className="w-6 h-6 relative z-10" />
     </div>,
-    <div className="relative p-3 bg-gradient-to-tr from-cyan-500 to-teal-400 text-white rounded-xl shadow-lg border border-cyan-400/20 animate-float-3d-delayed shrink-0">
-      <div className="absolute inset-0 bg-cyan-500/20 blur-md rounded-full scale-110"></div>
+    <div className="relative p-3 bg-gradient-to-tr from-amber-400 to-yellow-300 text-emerald-950 rounded-xl shadow-lg border border-amber-300/20 animate-float-3d-delayed shrink-0">
+      <div className="absolute inset-0 bg-amber-400/20 blur-md rounded-full scale-110"></div>
       <Zap className="w-6 h-6 relative z-10" />
     </div>,
     <div className="relative p-3 bg-gradient-to-tr from-emerald-600 to-green-400 text-white rounded-xl shadow-lg border border-emerald-400/20 animate-float-3d shrink-0">
       <div className="absolute inset-0 bg-emerald-500/20 blur-md rounded-full scale-110"></div>
       <FileCheck2 className="w-6 h-6 relative z-10" />
     </div>,
-    <div className="relative p-3 bg-gradient-to-tr from-purple-600 to-fuchsia-400 text-white rounded-xl shadow-lg border border-purple-400/20 animate-float-3d-delayed shrink-0">
-      <div className="absolute inset-0 bg-purple-500/20 blur-md rounded-full scale-110"></div>
+    <div className="relative p-3 bg-gradient-to-tr from-yellow-400 to-amber-500 text-emerald-950 rounded-xl shadow-lg border border-yellow-400/20 animate-float-3d-delayed shrink-0">
+      <div className="absolute inset-0 bg-yellow-400/20 blur-md rounded-full scale-110"></div>
       <Truck className="w-6 h-6 relative z-10" />
     </div>
   ];

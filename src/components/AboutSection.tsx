@@ -59,8 +59,8 @@ export default function AboutSection() {
           {/* Left Visual Column */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-[400px]">
-              {/* Blue backing decorative block */}
-              <div className={`absolute top-4 w-full h-full bg-blue-500/10 dark:bg-blue-400/5 rounded-2xl border border-blue-500/20 dark:border-blue-400/10 ${
+              {/* Accent backing decorative block */}
+              <div className={`absolute top-4 w-full h-full bg-emerald-500/10 dark:bg-emerald-400/5 rounded-2xl border border-emerald-500/20 dark:border-emerald-400/10 ${
                 dir === 'rtl' ? '-right-4' : '-left-4'
               }`}></div>
               
@@ -75,7 +75,7 @@ export default function AboutSection() {
               <div className={`absolute z-20 -bottom-5 bg-emerald-900 dark:bg-slate-950 border border-emerald-800 dark:border-slate-850 text-white p-4 rounded-xl shadow-xl flex items-center gap-3 ${
                 dir === 'rtl' ? '-left-5' : '-right-5'
               }`}>
-                <div className="p-2.5 bg-emerald-800 dark:bg-slate-900 rounded-lg text-blue-400 dark:text-amber-400">
+                <div className="p-2.5 bg-emerald-800 dark:bg-slate-900 rounded-lg text-amber-400 dark:text-amber-400">
                   <Award className="w-6 h-6" />
                 </div>
                 <div className={dir === 'rtl' ? 'text-right' : 'text-left'}>
@@ -95,7 +95,7 @@ export default function AboutSection() {
               <h2 className="font-display text-3xl sm:text-4xl font-extrabold text-gray-900 dark:text-white tracking-tight leading-tight">
                 {t.aboutTitle}
               </h2>
-              <div className={`w-12 h-1 bg-blue-600 rounded ${dir === 'rtl' ? 'mr-0 ml-auto' : 'mx-0'}`}></div>
+              <div className={`w-12 h-1 bg-amber-500 rounded ${dir === 'rtl' ? 'mr-0 ml-auto' : 'mx-0'}`}></div>
             </div>
 
             <p className="text-base text-gray-600 dark:text-gray-300 leading-relaxed font-light">

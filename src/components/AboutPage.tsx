@@ -25,7 +25,7 @@ export default function AboutPage() {
         ? "نحن ندعم كل صفقة بتعامل تجاري صريح وتحديثات مستمرة للوجستيات وتقارير جودة حقيقية."
         : "We back every shipment with clear trade dealings, constant logistical updates, and authentic quality reports.",
       icon: ShieldCheck,
-      color: "from-blue-500 to-blue-700"
+      color: "from-yellow-500 to-amber-600"
     },
     {
       title: lang === 'ar' ? "معايير جودة صارمة" : "Uncompromising Quality",

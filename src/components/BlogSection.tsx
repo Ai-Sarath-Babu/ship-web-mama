@@ -66,7 +66,7 @@ export default function BlogSection({ blogs, onQuoteClick }: BlogSectionProps) {
           <p className="mt-3 text-sm text-gray-600 leading-relaxed font-light">
             {localT.subtitle}
           </p>
-          <div className="w-12 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
+          <div className="w-12 h-1 bg-amber-500 mx-auto mt-4 rounded"></div>
         </div>
 
         {/* Blog Grid */}

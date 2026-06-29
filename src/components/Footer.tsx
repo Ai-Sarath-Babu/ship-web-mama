@@ -35,31 +35,31 @@ export default function Footer({ onQuoteClick, onAdminToggle, onPageChange }: Fo
               }
             </p>
 
-            <div className={`flex items-center gap-2 bg-emerald-900 border border-emerald-800 p-3 rounded-lg text-xs font-bold text-blue-400 ${
+            <div className={`flex items-center gap-2 bg-emerald-900 border border-emerald-800 p-3 rounded-lg text-xs font-bold text-amber-400 ${
               dir === 'rtl' ? 'flex-row-reverse' : ''
             }`}>
-              <ShieldCheck className="w-5 h-5 shrink-0 text-blue-400" />
+              <ShieldCheck className="w-5 h-5 shrink-0 text-amber-400" />
               <span>{lang === 'ar' ? 'حامل ترخيص معتمد للاستيراد والتصدير (IEC) | معتمد حكومياً' : 'IEC Certified License Holder | Govt. Approved'}</span>
             </div>
           </div>
 
           {/* Column 2: Quick Links */}
           <div className={`lg:col-span-2 space-y-4 ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-blue-400">{lang === 'ar' ? 'الشركة' : 'Company'}</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">{lang === 'ar' ? 'الشركة' : 'Company'}</h4>
             <div className="flex flex-col gap-2.5 text-xs text-emerald-100/80 font-light">
-              <button onClick={() => onPageChange('about')} className={`hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
+              <button onClick={() => onPageChange('about')} className={`hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
                 <ChevronRight className={`w-3.5 h-3.5 text-emerald-800 ${dir === 'rtl' ? 'rotate-180' : ''}`} />
                 <span>{t.aboutUs}</span>
               </button>
-              <button onClick={() => onPageChange('home')} className={`hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
+              <button onClick={() => onPageChange('home')} className={`hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
                 <ChevronRight className={`w-3.5 h-3.5 text-emerald-800 ${dir === 'rtl' ? 'rotate-180' : ''}`} />
                 <span>{lang === 'ar' ? 'الكفاءات الأساسية' : 'Core Capabilities'}</span>
               </button>
-              <button onClick={() => onPageChange('more')} className={`hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
+              <button onClick={() => onPageChange('more')} className={`hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
                 <ChevronRight className={`w-3.5 h-3.5 text-emerald-800 ${dir === 'rtl' ? 'rotate-180' : ''}`} />
                 <span>{lang === 'ar' ? 'بوابة الأخبار' : 'Trade Insights'}</span>
               </button>
-              <button onClick={() => onPageChange('faq')} className={`hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
+              <button onClick={() => onPageChange('faq')} className={`hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
                 <ChevronRight className={`w-3.5 h-3.5 text-emerald-800 ${dir === 'rtl' ? 'rotate-180' : ''}`} />
                 <span>{lang === 'ar' ? 'الأسئلة الشائعة' : 'Trade FAQs'}</span>
               </button>
@@ -68,25 +68,25 @@ export default function Footer({ onQuoteClick, onAdminToggle, onPageChange }: Fo
 
           {/* Column 3: Category Shortcuts */}
           <div className={`lg:col-span-3 space-y-4 ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-blue-400">{lang === 'ar' ? 'فئات التصدير' : 'Export Categories'}</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">{lang === 'ar' ? 'فئات التصدير' : 'Export Categories'}</h4>
             <div className="flex flex-col gap-2.5 text-xs text-emerald-100/80 font-light">
-              <button onClick={() => onPageChange('collections')} className={`hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
+              <button onClick={() => onPageChange('collections')} className={`hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
                 <ChevronRight className={`w-3.5 h-3.5 text-emerald-800 ${dir === 'rtl' ? 'rotate-180' : ''}`} />
                 <span>{lang === 'ar' ? 'أدوات المائدة وفخاريات الفنادق والمطاعم' : 'Restaurant Tableware & Crockeries'}</span>
               </button>
-              <button onClick={() => onPageChange('collections')} className={`hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
+              <button onClick={() => onPageChange('collections')} className={`hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
                 <ChevronRight className={`w-3.5 h-3.5 text-emerald-800 ${dir === 'rtl' ? 'rotate-180' : ''}`} />
                 <span>{lang === 'ar' ? 'أدوات المطبخ والسكاكين المتنوعة' : 'Kitchenware, Cutleries & Items'}</span>
               </button>
-              <button onClick={() => onPageChange('collections')} className={`hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
+              <button onClick={() => onPageChange('collections')} className={`hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
                 <ChevronRight className={`w-3.5 h-3.5 text-emerald-800 ${dir === 'rtl' ? 'rotate-180' : ''}`} />
                 <span>{lang === 'ar' ? 'مفارش طاولات قطنية فاخرة' : 'Premium Cotton Tablecloths'}</span>
               </button>
-              <button onClick={() => onPageChange('collections')} className={`hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
+              <button onClick={() => onPageChange('collections')} className={`hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
                 <ChevronRight className={`w-3.5 h-3.5 text-emerald-800 ${dir === 'rtl' ? 'rotate-180' : ''}`} />
                 <span>{lang === 'ar' ? 'جرانيت روبي ريد وبلاك جالاكسي الفاخر' : 'Ruby Red, Black Galaxy & Floor Granites'}</span>
               </button>
-              <button onClick={() => onPageChange('collections')} className={`hover:text-blue-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
+              <button onClick={() => onPageChange('collections')} className={`hover:text-amber-400 transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-none p-0 text-left ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
                 <ChevronRight className={`w-3.5 h-3.5 text-emerald-800 ${dir === 'rtl' ? 'rotate-180' : ''}`} />
                 <span>{lang === 'ar' ? 'رخام أبيض هندي طبيعي ممتاز' : 'Makrana White Indian Marbles'}</span>
               </button>
@@ -95,10 +95,10 @@ export default function Footer({ onQuoteClick, onAdminToggle, onPageChange }: Fo
 
           {/* Column 4: Contact & Reg */}
           <div className={`lg:col-span-3 space-y-4 ${dir === 'rtl' ? 'text-right' : 'text-left'}`}>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-blue-400">{lang === 'ar' ? 'المقر الرئيسي' : 'Headquarters'}</h4>
+            <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">{lang === 'ar' ? 'المقر الرئيسي' : 'Headquarters'}</h4>
             <ul className="space-y-3.5 text-xs text-emerald-100/80 font-light">
               <li className={`flex items-start gap-2.5 ${dir === 'rtl' ? 'flex-row-reverse text-right' : ''}`}>
-                <MapPin className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
                 <span>
                   <strong>Yalini Exim Corp:</strong><br />
                   No.8, Yalini Illam,<br />
@@ -107,11 +107,11 @@ export default function Footer({ onQuoteClick, onAdminToggle, onPageChange }: Fo
                 </span>
               </li>
               <li className={`flex items-center gap-2.5 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                <Mail className="w-4 h-4 text-blue-500 shrink-0" />
+                <Mail className="w-4 h-4 text-amber-400 shrink-0" />
                 <a href="mailto:prabhu@yaliniexim.com" className="hover:text-white transition-colors">prabhu@yaliniexim.com</a>
               </li>
               <li className={`flex items-center gap-2.5 ${dir === 'rtl' ? 'flex-row-reverse' : ''}`}>
-                <Phone className="w-4 h-4 text-blue-500 shrink-0" />
+                <Phone className="w-4 h-4 text-amber-400 shrink-0" />
                 <a href="tel:+919944823311" className="hover:text-white transition-colors">+91 99448 23311</a>
               </li>
             </ul>
@@ -144,4 +144,3 @@ export default function Footer({ onQuoteClick, onAdminToggle, onPageChange }: Fo
     </footer>
   );
 }
-

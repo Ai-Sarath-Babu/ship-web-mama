@@ -52,7 +52,7 @@ export default function CollectionsPage({
         <div className="grid sm:grid-cols-3 gap-6">
           
           <div className="bg-white p-5 rounded-2xl border border-gray-100 shadow-xs flex items-center gap-4 hover:border-emerald-700/10 hover:shadow-md transition-all duration-300">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 text-white flex items-center justify-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_4px_8px_-2px_rgba(59,130,246,0.2)] border border-blue-400/10 shrink-0">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500 to-amber-600 text-white flex items-center justify-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_4px_8px_-2px_rgba(245,158,11,0.2)] border border-amber-400/10 shrink-0">
               <Box className="w-5 h-5 text-white" />
             </div>
             <div className="min-w-0">

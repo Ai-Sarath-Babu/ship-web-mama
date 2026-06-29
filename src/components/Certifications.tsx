@@ -88,7 +88,7 @@ export default function Certifications() {
               : 'Yalini Exim is fully accredited with all federal and international regulatory agencies to guarantee legally sound and worry-free international trade operations.'
             }
           </p>
-          <div className="w-12 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
+          <div className="w-12 h-1 bg-amber-500 mx-auto mt-4 rounded"></div>
         </div>
 
         {/* Certs Grid */}
@@ -134,7 +134,7 @@ export default function Certifications() {
           dir === 'rtl' ? 'sm:flex-row-reverse' : ''
         }`}>
           <div className={`space-y-1 text-center ${dir === 'rtl' ? 'sm:text-right text-right' : 'sm:text-left text-left'}`}>
-            <h4 className="font-bold text-sm text-blue-400">{lang === 'ar' ? 'نرحب بجهات التفتيش الخارجية والطرف الثالث' : 'Third-Party Inspections Welcome'}</h4>
+            <h4 className="font-bold text-sm text-amber-400">{lang === 'ar' ? 'نرحب بجهات التفتيش الخارجية والطرف الثالث' : 'Third-Party Inspections Welcome'}</h4>
             <p className="text-xs text-emerald-100/90 leading-relaxed font-light">
               {lang === 'ar'
                 ? <>نحن ننسق مع كبرى شركات التفتيش والتحقق مثل <strong>SGS و Bureau Veritas و Intertek</strong> لفحص المواصفات والكميات بدقة قبل مغادرة الشحنة للموانئ.</>
@@ -208,21 +208,21 @@ export default function Certifications() {
             </div>
 
             {/* Badge 3: RCMC / FIEO */}
-            <div className="relative group p-6 bg-gradient-to-br from-blue-50/20 to-white border border-blue-200/30 rounded-2xl flex flex-col items-center text-center shadow-xs hover:shadow-md transition-all duration-300">
+            <div className="relative group p-6 bg-gradient-to-br from-amber-50/20 to-white border border-amber-200/30 rounded-2xl flex flex-col items-center text-center shadow-xs hover:shadow-md transition-all duration-300">
               <div className="absolute top-3 right-3 bg-emerald-100 text-emerald-800 text-[9px] font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-0.5">
                 <CheckCircle className="w-2.5 h-2.5" />
                 <span>Certified</span>
               </div>
-              <div className="w-16 h-16 bg-gradient-to-tr from-blue-600 to-blue-700 text-white rounded-full flex items-center justify-center shadow-sm border-4 border-white mb-4 group-hover:scale-105 transition-transform duration-300">
+              <div className="w-16 h-16 bg-gradient-to-tr from-amber-500 to-amber-600 text-white rounded-full flex items-center justify-center shadow-sm border-4 border-white mb-4 group-hover:scale-105 transition-transform duration-300">
                 <ShieldCheck className="w-8 h-8" />
               </div>
-              <span className="text-[10px] uppercase font-black tracking-widest text-blue-800 block">
+              <span className="text-[10px] uppercase font-black tracking-widest text-amber-800 block">
                 {lang === 'ar' ? 'اتحاد منظمات التصدير الهندية' : 'FIEO MEMBER'}
               </span>
               <h4 className="font-display text-sm font-bold text-gray-900 mt-1">
                 {lang === 'ar' ? 'ترخيص عضوية التصدير RCMC' : 'RCMC Membership'}
               </h4>
-              <p className="text-[10px] text-gray-600 mt-2 font-mono bg-blue-50/50 px-2 py-1 rounded-md border border-blue-100/40">
+              <p className="text-[10px] text-gray-600 mt-2 font-mono bg-amber-50/50 px-2 py-1 rounded-md border border-amber-100/40">
                 Reg No: RCMC/FIEO/382092
               </p>
               <span className="text-[9px] text-emerald-800 font-extrabold mt-3 uppercase tracking-wider">

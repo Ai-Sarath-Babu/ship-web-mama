@@ -530,11 +530,11 @@ export default function ExportMap() {
                 onClick={() => { setActiveCategory('textiles'); setSelectedCountry(null); }}
                 className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all border cursor-pointer flex items-center gap-1.5 ${
                   activeCategory === 'textiles'
-                    ? 'bg-blue-600 border-blue-700 text-white shadow-xs'
+                    ? 'bg-amber-500 border-amber-600 text-emerald-950 shadow-xs font-bold'
                     : 'bg-gray-50 dark:bg-slate-900 hover:bg-gray-100 border-gray-200 text-gray-600 dark:text-gray-300'
                 }`}
               >
-                <div className="w-2 h-2 rounded-full bg-blue-300"></div>
+                <div className="w-2 h-2 rounded-full bg-amber-300 animate-pulse"></div>
                 {lang === 'ar' ? 'المنسوجات والمفارش' : 'Luxury Linens'}
               </button>
             </div>
@@ -544,7 +544,7 @@ export default function ExportMap() {
             
             {/* Map Column (lg:col-span-8) */}
             <div className="lg:col-span-8 space-y-4">
-              <div className="relative aspect-[20/10] bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-inner flex items-center justify-center p-1.5">
+              <div className="relative aspect-[16/10] sm:aspect-[20/10] bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-inner flex items-center justify-center p-1.5">
                 
                 {/* SVG Map Backplane */}
                 <svg className="absolute inset-0 w-full h-full text-slate-800/15 pointer-events-none" xmlns="http://www.w3.org/2000/svg">
@@ -557,12 +557,12 @@ export default function ExportMap() {
                     <linearGradient id="route-all" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#10b981" stopOpacity="0.8" />
                       <stop offset="50%" stopColor="#f59e0b" stopOpacity="0.6" />
-                      <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="#84cc16" stopOpacity="0.2" />
                     </linearGradient>
 
                     <linearGradient id="route-stone" x1="0%" y1="0%" x2="100%" y2="100%">
                       <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.9" />
-                      <stop offset="100%" stopColor="#b45309" stopOpacity="0.2" />
+                      <stop offset="100%" stopColor="#eab308" stopOpacity="0.2" />
                     </linearGradient>
 
                     <linearGradient id="route-ceramics" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -571,8 +571,8 @@ export default function ExportMap() {
                     </linearGradient>
 
                     <linearGradient id="route-textiles" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.9" />
-                      <stop offset="100%" stopColor="#1d4ed8" stopOpacity="0.2" />
+                      <stop offset="0%" stopColor="#fbbf24" stopOpacity="0.9" />
+                      <stop offset="100%" stopColor="#fef08a" stopOpacity="0.2" />
                     </linearGradient>
                   </defs>
                   <rect width="100%" height="100%" fill="url(#grid-dark)" />
@@ -726,7 +726,7 @@ export default function ExportMap() {
                     // Choose colors based on category
                     const dotColor = 
                       activeShip.category === 'stone' ? '#f59e0b' : 
-                      activeShip.category === 'ceramics' ? '#10b981' : '#3b82f6';
+                      activeShip.category === 'ceramics' ? '#10b981' : '#eab308';
 
                     return (
                       <g className="transition-all duration-700">
@@ -767,11 +767,22 @@ export default function ExportMap() {
                     onClick={() => setSelectedCountry(countryStats.UK)}
                     onMouseEnter={() => setHoveredCountry(countryStats.UK)}
                     onMouseLeave={() => setHoveredCountry(null)}
-                    whileHover={{ scale: 1.08 }}
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     style={{ originX: "380px", originY: "110px" }}
                   >
+                    {/* Enlarged touch hit-area for touchscreens */}
+                    <circle cx="380" cy="110" r="32" fill="transparent" pointerEvents="all" />
                     {activeCategory === 'stone' || activeCategory === 'all' || activeCategory === 'ceramics' ? (
-                      <circle cx="380" cy="110" r="22" fill="#f59e0b" fillOpacity="0.15" className="animate-pulse" />
+                      <motion.circle 
+                        cx="380" 
+                        cy="110" 
+                        r="22" 
+                        fill="#f59e0b" 
+                        initial={{ opacity: 0.1, scale: 0.8 }}
+                        animate={{ opacity: [0.1, 0.35, 0.1], scale: [0.8, 1.25, 0.8] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      />
                     ) : null}
                     <circle cx="380" cy="110" r="10" fill="#f59e0b" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
                     <circle cx="380" cy="110" r="4.5" fill="#f59e0b" className="group-hover:scale-125 transition-transform" />
@@ -790,11 +801,22 @@ export default function ExportMap() {
                     onClick={() => setSelectedCountry(countryStats.Singapore)}
                     onMouseEnter={() => setHoveredCountry(countryStats.Singapore)}
                     onMouseLeave={() => setHoveredCountry(null)}
-                    whileHover={{ scale: 1.08 }}
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     style={{ originX: "600px", originY: "240px" }}
                   >
+                    {/* Enlarged touch hit-area for touchscreens */}
+                    <circle cx="600" cy="240" r="32" fill="transparent" pointerEvents="all" />
                     {activeCategory === 'ceramics' || activeCategory === 'all' || activeCategory === 'textiles' ? (
-                      <circle cx="600" cy="240" r="22" fill="#10b981" fillOpacity="0.15" className="animate-pulse" />
+                      <motion.circle 
+                        cx="600" 
+                        cy="240" 
+                        r="22" 
+                        fill="#10b981" 
+                        initial={{ opacity: 0.1, scale: 0.8 }}
+                        animate={{ opacity: [0.1, 0.35, 0.1], scale: [0.8, 1.25, 0.8] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      />
                     ) : null}
                     <circle cx="600" cy="240" r="10" fill="#10b981" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
                     <circle cx="600" cy="240" r="4.5" fill="#10b981" className="group-hover:scale-125 transition-transform" />
@@ -813,17 +835,28 @@ export default function ExportMap() {
                     onClick={() => setSelectedCountry(countryStats.Canada)}
                     onMouseEnter={() => setHoveredCountry(countryStats.Canada)}
                     onMouseLeave={() => setHoveredCountry(null)}
-                    whileHover={{ scale: 1.08 }}
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     style={{ originX: "150px", originY: "100px" }}
                   >
+                    {/* Enlarged touch hit-area for touchscreens */}
+                    <circle cx="150" cy="100" r="32" fill="transparent" pointerEvents="all" />
                     {activeCategory === 'textiles' || activeCategory === 'all' || activeCategory === 'stone' ? (
-                      <circle cx="150" cy="100" r="22" fill="#3b82f6" fillOpacity="0.15" className="animate-pulse" />
+                      <motion.circle 
+                        cx="150" 
+                        cy="100" 
+                        r="22" 
+                        fill="#eab308" 
+                        initial={{ opacity: 0.1, scale: 0.8 }}
+                        animate={{ opacity: [0.1, 0.35, 0.1], scale: [0.8, 1.25, 0.8] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      />
                     ) : null}
-                    <circle cx="150" cy="100" r="10" fill="#3b82f6" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
-                    <circle cx="150" cy="100" r="4.5" fill="#3b82f6" className="group-hover:scale-125 transition-transform" />
+                    <circle cx="150" cy="100" r="10" fill="#eab308" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
+                    <circle cx="150" cy="100" r="4.5" fill="#eab308" className="group-hover:scale-125 transition-transform" />
                     {/* Tag label */}
                     <g transform="translate(125, 65)">
-                      <rect width="50" height="20" rx="6" fill="#1e293b" stroke={activeCategory === 'textiles' ? '#3b82f6' : '#475569'} strokeWidth="1" className="shadow-md" />
+                      <rect width="50" height="20" rx="6" fill="#1e293b" stroke={activeCategory === 'textiles' ? '#fbbf24' : '#475569'} strokeWidth="1" className="shadow-md" />
                       <text x="25" y="12" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">
                         🇨🇦 {lang === 'ar' ? "كندا" : "CA"}
                       </text>
@@ -836,11 +869,22 @@ export default function ExportMap() {
                     onClick={() => setSelectedCountry(countryStats.NZ)}
                     onMouseEnter={() => setHoveredCountry(countryStats.NZ)}
                     onMouseLeave={() => setHoveredCountry(null)}
-                    whileHover={{ scale: 1.08 }}
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     style={{ originX: "720px", originY: "320px" }}
                   >
+                    {/* Enlarged touch hit-area for touchscreens */}
+                    <circle cx="720" cy="320" r="32" fill="transparent" pointerEvents="all" />
                     {activeCategory === 'stone' || activeCategory === 'all' ? (
-                      <circle cx="720" cy="320" r="22" fill="#f59e0b" fillOpacity="0.15" className="animate-pulse" />
+                      <motion.circle 
+                        cx="720" 
+                        cy="320" 
+                        r="22" 
+                        fill="#f59e0b" 
+                        initial={{ opacity: 0.1, scale: 0.8 }}
+                        animate={{ opacity: [0.1, 0.35, 0.1], scale: [0.8, 1.25, 0.8] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      />
                     ) : null}
                     <circle cx="720" cy="320" r="10" fill="#f59e0b" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
                     <circle cx="720" cy="320" r="4.5" fill="#f59e0b" className="group-hover:scale-125 transition-transform" />
@@ -859,17 +903,28 @@ export default function ExportMap() {
                     onClick={() => setSelectedCountry(countryStats.USA)}
                     onMouseEnter={() => setHoveredCountry(countryStats.USA)}
                     onMouseLeave={() => setHoveredCountry(null)}
-                    whileHover={{ scale: 1.08 }}
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     style={{ originX: "190px", originY: "120px" }}
                   >
+                    {/* Enlarged touch hit-area for touchscreens */}
+                    <circle cx="190" cy="120" r="32" fill="transparent" pointerEvents="all" />
                     {activeCategory === 'stone' || activeCategory === 'textiles' || activeCategory === 'all' ? (
-                      <circle cx="190" cy="120" r="22" fill="#3b82f6" fillOpacity="0.15" className="animate-pulse" />
+                      <motion.circle 
+                        cx="190" 
+                        cy="120" 
+                        r="22" 
+                        fill="#eab308" 
+                        initial={{ opacity: 0.1, scale: 0.8 }}
+                        animate={{ opacity: [0.1, 0.35, 0.1], scale: [0.8, 1.25, 0.8] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      />
                     ) : null}
-                    <circle cx="190" cy="120" r="10" fill="#3b82f6" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
-                    <circle cx="190" cy="120" r="4.5" fill="#3b82f6" className="group-hover:scale-125 transition-transform" />
+                    <circle cx="190" cy="120" r="10" fill="#eab308" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
+                    <circle cx="190" cy="120" r="4.5" fill="#eab308" className="group-hover:scale-125 transition-transform" />
                     {/* Tag label */}
                     <g transform="translate(165, 85)">
-                      <rect width="50" height="20" rx="6" fill="#1e293b" stroke={activeCategory === 'stone' ? '#f59e0b' : activeCategory === 'textiles' ? '#3b82f6' : '#475569'} strokeWidth="1" className="shadow-md" />
+                      <rect width="50" height="20" rx="6" fill="#1e293b" stroke={activeCategory === 'stone' ? '#f59e0b' : activeCategory === 'textiles' ? '#eab308' : '#475569'} strokeWidth="1" className="shadow-md" />
                       <text x="25" y="12" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">
                         🇺🇸 {lang === 'ar' ? "أمريكا" : "USA"}
                       </text>
@@ -882,11 +937,22 @@ export default function ExportMap() {
                     onClick={() => setSelectedCountry(countryStats.Australia)}
                     onMouseEnter={() => setHoveredCountry(countryStats.Australia)}
                     onMouseLeave={() => setHoveredCountry(null)}
-                    whileHover={{ scale: 1.08 }}
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     style={{ originX: "690px", originY: "310px" }}
                   >
+                    {/* Enlarged touch hit-area for touchscreens */}
+                    <circle cx="690" cy="310" r="32" fill="transparent" pointerEvents="all" />
                     {activeCategory === 'stone' || activeCategory === 'ceramics' || activeCategory === 'all' ? (
-                      <circle cx="690" cy="310" r="22" fill="#f59e0b" fillOpacity="0.15" className="animate-pulse" />
+                      <motion.circle 
+                        cx="690" 
+                        cy="310" 
+                        r="22" 
+                        fill="#f59e0b" 
+                        initial={{ opacity: 0.1, scale: 0.8 }}
+                        animate={{ opacity: [0.1, 0.35, 0.1], scale: [0.8, 1.25, 0.8] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      />
                     ) : null}
                     <circle cx="690" cy="310" r="10" fill="#f59e0b" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
                     <circle cx="690" cy="310" r="4.5" fill="#f59e0b" className="group-hover:scale-125 transition-transform" />
@@ -905,11 +971,22 @@ export default function ExportMap() {
                     onClick={() => setSelectedCountry(countryStats.UAE)}
                     onMouseEnter={() => setHoveredCountry(countryStats.UAE)}
                     onMouseLeave={() => setHoveredCountry(null)}
-                    whileHover={{ scale: 1.08 }}
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     style={{ originX: "490px", originY: "190px" }}
                   >
+                    {/* Enlarged touch hit-area for touchscreens */}
+                    <circle cx="490" cy="190" r="32" fill="transparent" pointerEvents="all" />
                     {activeCategory === 'ceramics' || activeCategory === 'stone' || activeCategory === 'all' ? (
-                      <circle cx="490" cy="190" r="22" fill="#10b981" fillOpacity="0.15" className="animate-pulse" />
+                      <motion.circle 
+                        cx="490" 
+                        cy="190" 
+                        r="22" 
+                        fill="#10b981" 
+                        initial={{ opacity: 0.1, scale: 0.8 }}
+                        animate={{ opacity: [0.1, 0.35, 0.1], scale: [0.8, 1.25, 0.8] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      />
                     ) : null}
                     <circle cx="490" cy="190" r="10" fill="#10b981" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
                     <circle cx="490" cy="190" r="4.5" fill="#10b981" className="group-hover:scale-125 transition-transform" />
@@ -928,17 +1005,28 @@ export default function ExportMap() {
                     onClick={() => setSelectedCountry(countryStats.Germany)}
                     onMouseEnter={() => setHoveredCountry(countryStats.Germany)}
                     onMouseLeave={() => setHoveredCountry(null)}
-                    whileHover={{ scale: 1.08 }}
+                    whileHover={{ scale: 1.15 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
                     style={{ originX: "410px", originY: "100px" }}
                   >
+                    {/* Enlarged touch hit-area for touchscreens */}
+                    <circle cx="410" cy="100" r="32" fill="transparent" pointerEvents="all" />
                     {activeCategory === 'stone' || activeCategory === 'textiles' || activeCategory === 'all' ? (
-                      <circle cx="410" cy="100" r="22" fill="#3b82f6" fillOpacity="0.15" className="animate-pulse" />
+                      <motion.circle 
+                        cx="410" 
+                        cy="100" 
+                        r="22" 
+                        fill="#10b981" 
+                        initial={{ opacity: 0.1, scale: 0.8 }}
+                        animate={{ opacity: [0.1, 0.35, 0.1], scale: [0.8, 1.25, 0.8] }}
+                        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                      />
                     ) : null}
-                    <circle cx="410" cy="100" r="10" fill="#3b82f6" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
-                    <circle cx="410" cy="100" r="4.5" fill="#3b82f6" className="group-hover:scale-125 transition-transform" />
+                    <circle cx="410" cy="100" r="10" fill="#10b981" fillOpacity="0.2" className="group-hover:fill-opacity-40 transition-all" />
+                    <circle cx="410" cy="100" r="4.5" fill="#10b981" className="group-hover:scale-125 transition-transform" />
                     {/* Tag label */}
                     <g transform="translate(385, 65)">
-                      <rect width="50" height="20" rx="6" fill="#1e293b" stroke={activeCategory === 'stone' ? '#f59e0b' : activeCategory === 'textiles' ? '#3b82f6' : '#475569'} strokeWidth="1" className="shadow-md" />
+                      <rect width="50" height="20" rx="6" fill="#1e293b" stroke={activeCategory === 'stone' ? '#f59e0b' : activeCategory === 'textiles' ? '#fbbf24' : '#475569'} strokeWidth="1" className="shadow-md" />
                       <text x="25" y="12" fill="#ffffff" fontSize="8" fontWeight="bold" textAnchor="middle" fontFamily="sans-serif">
                         🇩🇪 {lang === 'ar' ? "ألمانيا" : "GER"}
                       </text>
@@ -1016,7 +1104,7 @@ export default function ExportMap() {
                         </div>
                         <div className="flex justify-between items-center text-gray-400 border-t border-slate-800/80 pt-1.5 mt-1.5">
                           <span>{lang === 'ar' ? 'الطلب الأساسي' : 'Primary Demand'}</span>
-                          <span className="text-blue-400 font-semibold text-[9px] truncate max-w-[110px]">
+                          <span className="text-amber-400 font-semibold text-[9px] truncate max-w-[110px]">
                             {hoveredCountry.demands[0].label.split(' & ')[0].split(' وبلاط ')[0]}
                           </span>
                         </div>
@@ -1128,7 +1216,7 @@ export default function ExportMap() {
                     const catColors: Record<string, string> = {
                       stone: 'bg-amber-500 text-amber-950',
                       ceramics: 'bg-emerald-700 text-emerald-50',
-                      textiles: 'bg-blue-600 text-blue-50'
+                      textiles: 'bg-yellow-500 text-emerald-950'
                     };
                     return (
                       <button
@@ -1328,7 +1416,7 @@ export default function ExportMap() {
                 <div className="bg-gray-50 dark:bg-slate-950/40 border border-gray-150 dark:border-slate-800 p-3.5 rounded-xl space-y-1 text-left">
                   <span className="text-[9px] text-gray-400 uppercase tracking-wider font-bold block">{lang === 'ar' ? 'الحاويات شهرياً' : 'Containers/Mo'}</span>
                   <div className="text-xs font-black text-gray-900 dark:text-white flex items-center gap-1">
-                    <Ship className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                    <Ship className="w-3.5 h-3.5 text-amber-500 shrink-0" />
                     <span>{selectedCountry.containers.split(' ')[0]}</span>
                   </div>
                 </div>
@@ -1339,10 +1427,10 @@ export default function ExportMap() {
                     <span>{selectedCountry.growthTrend}</span>
                   </div>
                 </div>
-                <div className="bg-blue-50/30 dark:bg-blue-950/10 border border-blue-100/40 dark:border-blue-900/20 p-3.5 rounded-xl space-y-1 text-left">
-                  <span className="text-[9px] text-blue-700 dark:text-blue-400 uppercase tracking-wider font-bold block">{lang === 'ar' ? 'إجمالي الصادرات مؤخراً' : 'Recent Total Volume'}</span>
-                  <div className="text-xs font-black text-blue-800 dark:text-blue-400 flex items-center gap-1">
-                    <Activity className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                <div className="bg-amber-50/30 dark:bg-amber-950/5 border border-amber-100/40 dark:border-amber-900/10 p-3.5 rounded-xl space-y-1 text-left">
+                  <span className="text-[9px] text-amber-700 dark:text-amber-400 uppercase tracking-wider font-bold block">{lang === 'ar' ? 'إجمالي الصادرات مؤخراً' : 'Recent Total Volume'}</span>
+                  <div className="text-xs font-black text-amber-800 dark:text-amber-400 flex items-center gap-1">
+                    <Activity className="w-3.5 h-3.5 text-amber-500 shrink-0" />
                     <span>{selectedCountry.totalRecentVolume}</span>
                   </div>
                 </div>
@@ -1358,7 +1446,7 @@ export default function ExportMap() {
                   {selectedCountry.demands.map((item: any, i: number) => {
                     const barColor = 
                       item.cat === 'stone' ? 'bg-amber-500' : 
-                      item.cat === 'ceramics' ? 'bg-emerald-600' : 'bg-blue-600';
+                      item.cat === 'ceramics' ? 'bg-emerald-600' : 'bg-yellow-500';
                     return (
                       <div key={i} className="space-y-1">
                         <div className="flex justify-between items-center text-xs font-medium">

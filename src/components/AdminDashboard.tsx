@@ -381,7 +381,7 @@ export default function AdminDashboard({
       {/* Analytics Quick Metric Blocks */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm flex items-center gap-4">
-          <div className="p-3 bg-blue-50 text-blue-700 rounded-xl">
+          <div className="p-3 bg-amber-50 text-amber-700 rounded-xl">
             <Users className="w-5 h-5" />
           </div>
           <div>
@@ -1169,7 +1169,7 @@ export default function AdminDashboard({
                 {/* Google Search Snippet Simulation */}
                 <div className="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm space-y-2.5">
                   <h4 className="text-[10px] uppercase tracking-wider text-gray-400 font-extrabold flex items-center gap-1">
-                    <Search className="w-3.5 h-3.5 text-blue-500" />
+                    <Search className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Google Snippet Preview</span>
                   </h4>
                   <div className="space-y-1 text-left">
