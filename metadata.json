@@ -1,0 +1,6 @@
+{
+  "name": "Yalini Exim",
+  "description": "B2B Export & International Trading platform for premium Indian biodegradable tableware, FMCG products, groceries, restaurant supplies, granites, and marbles.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

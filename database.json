@@ -1,0 +1,272 @@
+{
+  "categories": [
+    {
+      "id": "1",
+      "name": "Restaurant Crockeries & Tableware",
+      "slug": "restaurant-crockeries-tableware"
+    },
+    {
+      "id": "2",
+      "name": "Kitchenware & Premium Cutleries",
+      "slug": "kitchenware-premium-cutleries"
+    },
+    {
+      "id": "3",
+      "name": "Dining Tablecloths & Linens",
+      "slug": "dining-tablecloths-linens"
+    },
+    {
+      "id": "4",
+      "name": "Premium Indian Granites",
+      "slug": "premium-indian-granites"
+    },
+    {
+      "id": "5",
+      "name": "Indian Marbles",
+      "slug": "indian-marbles"
+    }
+  ],
+  "products": [
+    {
+      "id": "p1",
+      "name": "Premium Porcelain Serving Bowls",
+      "category": "Restaurant Crockeries & Tableware",
+      "subCategory": "restaurant-crockeries",
+      "description": "High-alumina reinforced porcelain serving bowls, custom designed for luxury hospitality and intense restaurant operations. Chip-resistant rim and thermal-shock safe.",
+      "image": "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=600&q=80",
+      "moq": "1,500 Units",
+      "features": [
+        "Reinforced chip-proof edges",
+        "Dishwasher & Microwave Safe",
+        "Lead & Cadmium Free glaze",
+        "Stackable and space-saving design"
+      ],
+      "specifications": {
+        "Material": "Porcelain / High-Alumina Clay",
+        "Sizes Available": "6 inch, 8 inch, 10 inch, 12 inch",
+        "Thermal Tolerance": "Oven-to-Table Safe",
+        "Color Options": "Super White / Warm Ivory"
+      }
+    },
+    {
+      "id": "p2",
+      "name": "Fine Dining Ceramic Crockeries & Plates",
+      "category": "Restaurant Crockeries & Tableware",
+      "subCategory": "restaurant-crockeries",
+      "description": "Professional-grade dining ware and charger plates tailored for elite hotels and restaurant chains. Features high-gloss scratch-protection and a majestic modern coupe silhouette.",
+      "image": "https://images.unsplash.com/photo-1577140917170-285929fb55b7?auto=format&fit=crop&w=600&q=80",
+      "moq": "2,000 Pieces",
+      "features": [
+        "Tested for 5,000+ commercial wash cycles",
+        "Stain-resistant and glaze-protected",
+        "Custom under-glaze brand logo firing",
+        "Sophisticated textured borders available"
+      ],
+      "specifications": {
+        "Item Types": "Dinner Plates, Side Plates, Soup Bowls",
+        "Finish": "Glossy Mirror Protective Glaze",
+        "Lead Safety": "FDA & California Prop 65 Compliant",
+        "MOQ per SKU": "500 Pieces"
+      }
+    },
+    {
+      "id": "p3",
+      "name": "Professional Stainless Steel Cutleries Set",
+      "category": "Kitchenware & Premium Cutleries",
+      "subCategory": "kitchenware-premium-cutleries",
+      "description": "Exquisite 18/10 stainless steel flatware set including forks, knives, spoons, and teaspoons. Mirror polished and weighted perfectly for a comfortable upscale dining experience.",
+      "image": "https://images.unsplash.com/photo-1543510473-ac2c35329a28?auto=format&fit=crop&w=600&q=80",
+      "moq": "5,000 Sets",
+      "features": [
+        "Surgical Grade 18/10 Stainless Steel",
+        "High corrosion and rust resistance",
+        "Excellent weight and balanced feel",
+        "Luxurious gold-PVD plating options available"
+      ],
+      "specifications": {
+        "Composition": "18/10 Chromium-Nickel Stainless Steel",
+        "Finish": "Super Mirror Polish (Grade A)",
+        "Dishwasher Compatibility": "100% Dishwasher Safe",
+        "Packing": "Custom branded corporate wooden box or bulk master cartons"
+      }
+    },
+    {
+      "id": "p4",
+      "name": "High-Grade Commercial Kitchen Items & Ware",
+      "category": "Kitchenware & Premium Cutleries",
+      "subCategory": "kitchenware-premium-cutleries",
+      "description": "Premium industrial kitchen cookware, pots, pans, and food prep utensils. Made with heavy-duty tri-ply stainless steel for even heat distribution in commercial settings.",
+      "image": "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=80",
+      "moq": "200 Pieces per SKU",
+      "features": [
+        "Heavy-duty Tri-Ply construction",
+        "Stay-cool riveted hollow handles",
+        "Induction, gas, and electric stove compatible",
+        "NSF Certified for commercial kitchens"
+      ],
+      "specifications": {
+        "Material": "SS304 Inner, Aluminium Core, SS430 Base",
+        "Thickness": "2.8mm - 3.2mm",
+        "Types": "Stock Pots, Fry Pans, Sauce Pans, Sauteuse",
+        "OEM Branding": "Laser-etched logo available"
+      }
+    },
+    {
+      "id": "p5",
+      "name": "Premium Cotton Dining Tablecloths",
+      "category": "Dining Tablecloths & Linens",
+      "subCategory": "dining-tablecloths-linens",
+      "description": "High-density weave cotton tablecloths and table runners, chemically treated for stain resistance and liquid spill-repellency. Extremely elegant fabric texture for fine dining setup.",
+      "image": "https://images.unsplash.com/photo-1590794056226-79ef3a8147e1?auto=format&fit=crop&w=600&q=80",
+      "moq": "1,000 Units",
+      "features": [
+        "100% long-staple Indian combed cotton",
+        "Spill-proof and stain-resistant coating",
+        "Double-stitched mitered corners for long wear",
+        "Machine washable, color-fast colors"
+      ],
+      "specifications": {
+        "Weave Style": "Damask Jacquard, Plain Weave, Herringbone",
+        "Thread Count": "200 TC, 300 TC, 400 TC",
+        "Sizes": "Square, Rectangular, Round custom sizes",
+        "Colors": "Bleached White, Champagne, Dark Blue, Emerald Green"
+      }
+    },
+    {
+      "id": "p6",
+      "name": "Imperial Ruby Red Granite",
+      "category": "Premium Indian Granites",
+      "subCategory": "premium-indian-granites",
+      "description": "Majestic Ruby Red granite blocks and slabs sourced directly from high-quality quarries of Southern India. Features a fascinating rich red backdrop with elegant dark grain inclusions.",
+      "image": "https://images.unsplash.com/photo-1618220179428-22790b461013?auto=format&fit=crop&w=600&q=80",
+      "moq": "1 Full Container (FCL)",
+      "features": [
+        "Quarried from highly stable deep bedrock",
+        "Perfect color consistency across slabs",
+        "Exceptional compressive strength",
+        "Mirror-like polished gloss of 95+"
+      ],
+      "specifications": {
+        "Thickness": "20mm, 30mm, 40mm calibrated",
+        "Slab Sizes": "Gangsaw (280cm x 160cm up), Cutter (180cm x 60cm up)",
+        "Finishes": "Polished, Honed, Leathered, Flamed, Brush-hammered",
+        "Applications": "Kitchen Countertops, Accent Walls, Exterior Cladding"
+      }
+    },
+    {
+      "id": "p7",
+      "name": "Premium Black Galaxy Granite Slabs",
+      "category": "Premium Indian Granites",
+      "subCategory": "premium-indian-granites",
+      "description": "The globally renowned Black Galaxy granite from Ongole quarries. Characterized by a deep, pitch-black background with brilliant golden and copper bronzite flecks shining like stars.",
+      "image": "https://images.unsplash.com/photo-1590244921252-15f39274a412?auto=format&fit=crop&w=600&q=80",
+      "moq": "1 Full Container (FCL)",
+      "features": [
+        "Zero artificial dyes or resins used",
+        "Extremely high density and scratch resistance",
+        "Glistening copper-golden sparkles",
+        "Precision cut edge finishing (+/- 0.5mm tolerance)"
+      ],
+      "specifications": {
+        "Golden Flakes Density": "Medium to High dense selection",
+        "Calibrated Tiles": "30x30cm, 60x30cm, 60x60cm, 120x60cm",
+        "Water Absorption": "0.02% (superior resistance)",
+        "Slab Sizing": "Jumbo Gangsaw Slabs"
+      }
+    },
+    {
+      "id": "p8",
+      "name": "Polished Floor Granite Slabs",
+      "category": "Premium Indian Granites",
+      "subCategory": "premium-indian-granites",
+      "description": "High-quality, durable, and calibrated Indian floor granite slabs. Extremely robust, slip-resistant when honed/flamed, and highly resistant to heavy footfall in public and private spaces.",
+      "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=600&q=80",
+      "moq": "1 Full Container (FCL)",
+      "features": [
+        "Highly durable, scratch & stain proof",
+        "Ideal for indoor living spaces, corporate lobbies, and malls",
+        "Low maintenance requirements",
+        "Wide variety of Indian color selections"
+      ],
+      "specifications": {
+        "Density": "2.65 - 2.80 g/cm³",
+        "Calibrated Thickness": "15mm, 18mm, 20mm, 30mm",
+        "Finish Options": "Polished (gloss 90+), Honed, Satin Finish",
+        "Packaging": "Fumigated seaworthy strong wooden crates"
+      }
+    },
+    {
+      "id": "p9",
+      "name": "Makrana Pristine White Marble Slabs",
+      "category": "Indian Marbles",
+      "subCategory": "indian-marbles",
+      "description": "The world's most historically acclaimed pure Makrana White Marble with soft, graceful gray veining. Highly crystalline structure that gets brighter and more radiant with time.",
+      "image": "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80",
+      "moq": "1 Full Container (FCL)",
+      "features": [
+        "Pure natural calcium carbonate composition (>98% CaCO3)",
+        "Stain-resistant and weather-resilient stone",
+        "Naturally cool and highly light-reflective",
+        "Extremely long-lasting (used in historical monuments)"
+      ],
+      "specifications": {
+        "Mined Location": "Makrana, Rajasthan, India",
+        "Calibrated Slabs": "18mm, 20mm thickness",
+        "Water Absorption": "Nearly 0%",
+        "Texture Selection": "Pure White, Albeta, Dungri, Statuario Indian"
+      }
+    }
+  ],
+  "blogs": [
+    {
+      "id": "b1",
+      "title": "A B2B Sourcing Guide for Indian Granite: Ruby Red & Black Galaxy",
+      "slug": "b2b-sourcing-guide-indian-granite-ruby-black",
+      "summary": "Everything global stone importers, architects, and monument dealers must verify before securing granite shipments from India.",
+      "content": "India remains the undisputed world leader in natural stone exports, boasting rare and legendary granite varieties such as the intense Imperial Ruby Red and Ongole's celestial Black Galaxy. For B2B buyers, understanding specific thickness calibration, polishing standards (gloss levels above 95), and secure sea container timber-crating is essential to avoid fractures. At Yalini Exim, we execute multi-stage quality checks directly at the processing yards in Tamil Nadu and Rajasthan, ensuring pristine, fissure-free granite slabs are loaded with complete certified documentation.",
+      "image": "https://images.unsplash.com/photo-1590244921252-15f39274a412?auto=format&fit=crop&w=600&q=80",
+      "date": "2026-06-25",
+      "author": "Prabhu, Managing Director"
+    },
+    {
+      "id": "b2",
+      "title": "Hospitality Sourcing: Elevating Guest Experience with Custom Crockeries & Linens",
+      "slug": "hospitality-sourcing-custom-crockeries-linens",
+      "summary": "How premium porcelain tableware, surgical-grade cutleries, and spill-resistant cotton tablecloths define modern restaurant luxury.",
+      "content": "The global fine dining and hotel catering sectors have elevated their procurement requirements. It is no longer just about standard utensils; today's elite venues demand high-alumina reinforced chip-resistant porcelain serving bowls, custom-branded dinnerware sets, and heavy 18/10 stainless steel flatware. In addition, liquid-repelling combed cotton tablecloths protect table assets while establishing an premium ambiance. Learn how Yalini Exim coordinates comprehensive supply packages for luxury restaurant setups directly from India's top certified manufacturers.",
+      "image": "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=600&q=80",
+      "date": "2026-06-27",
+      "author": "Hospitality Procurement Lead"
+    }
+  ],
+  "inquiries": [
+    {
+      "id": "inq_1",
+      "companyName": "Al-Sultan Palace Catering",
+      "contactPerson": "Tariq Mahmood",
+      "country": "Saudi Arabia",
+      "email": "procurement@alsultanhotels.sa",
+      "whatsapp": "+966505123456",
+      "productRequirement": "Premium Porcelain Serving Bowls & Dining Plate Sets",
+      "quantity": "5,000 Pieces",
+      "message": "We require a complete high-grade tableware shipment for our new luxury restaurant banquet hall in Riyadh. Please share your FOB Tuticorin/Chennai prices and catalogs.",
+      "leadSource": "Form",
+      "date": "2026-06-26T14:22:00Z",
+      "status": "Pending"
+    },
+    {
+      "id": "inq_2",
+      "companyName": "Pacific Design & Stone LLC",
+      "contactPerson": "Marcus Finch",
+      "country": "USA",
+      "email": "m.finch@pacificstonedesign.com",
+      "whatsapp": "+12065550198",
+      "productRequirement": "Black Galaxy & Ruby Red Granite Slabs 20mm",
+      "quantity": "2 Full Containers (FCL)",
+      "message": "Looking for premium quality Black Galaxy and Ruby Red slabs for high-end residential kitchen countertop projects in Seattle. Slabs must be Gangsaw cut. Please provide quarry details.",
+      "leadSource": "ExitIntent",
+      "date": "2026-06-27T09:15:00Z",
+      "status": "Contacted"
+    }
+  ]
+}
