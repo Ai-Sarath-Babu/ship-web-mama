@@ -5,6 +5,8 @@ type Theme = 'light' | 'dark';
 interface ThemeContextType {
   theme: Theme;
   toggleTheme: () => void;
+  isDeployedMode: boolean;
+  toggleDeployedMode: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -15,6 +17,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     if (saved === 'dark' || saved === 'light') return saved;
     return 'light'; // default to light
   });
+
+  const [isDeployedMode] = useState<boolean>(false);
 
   useEffect(() => {
     const root = window.document.documentElement;
@@ -33,8 +37,12 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     setTheme((prev) => (prev === 'light' ? 'dark' : 'light'));
   };
 
+  const toggleDeployedMode = () => {
+    // No-op - we only use the green and white layout now
+  };
+
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, isDeployedMode, toggleDeployedMode }}>
       {children}
     </ThemeContext.Provider>
   );

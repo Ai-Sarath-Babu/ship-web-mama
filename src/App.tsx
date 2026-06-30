@@ -22,6 +22,7 @@ import Footer from './components/Footer';
 import CertificationBadges from './components/CertificationBadges';
 import { Product, Category, Inquiry, Blog } from './types';
 import { Sparkles, MessageCircle, AlertCircle, ArrowUp, Send, CheckCircle } from 'lucide-react';
+import { useTheme } from './utils/ThemeContext';
 
 import AboutPage from './components/AboutPage';
 import ContactPage from './components/ContactPage';
@@ -32,11 +33,27 @@ import ProfilePage from './components/ProfilePage';
 
 export default function App() {
   const [isAdminMode, setIsAdminMode] = useState(false);
+  const [showAdminBtn, setShowAdminBtn] = useState(false);
   const [isQuotePopupOpen, setIsQuotePopupOpen] = useState(false);
   const [prefilledProduct, setPrefilledProduct] = useState('');
   const [leadSource, setLeadSource] = useState<'Form' | 'ExitIntent' | 'Catalog' | 'WhatsApp'>('Form');
   const [searchQuery, setSearchQuery] = useState('');
   const [activePage, setActivePage] = useState<'home' | 'about' | 'collections' | 'faq' | 'contact' | 'more' | 'profile'>('home');
+
+  // Check URL or LocalStorage to determine if the user has access to see Admin gateway/console buttons
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const adminParam = params.get('admin');
+    if (adminParam === 'true') {
+      setShowAdminBtn(true);
+      localStorage.setItem('yalini_admin_visible', 'true');
+    } else if (adminParam === 'false') {
+      setShowAdminBtn(false);
+      localStorage.removeItem('yalini_admin_visible');
+    } else if (localStorage.getItem('yalini_admin_visible') === 'true') {
+      setShowAdminBtn(true);
+    }
+  }, []);
 
   // Synchronize activePage with URL on load/navigation
   useEffect(() => {
@@ -387,6 +404,7 @@ export default function App() {
         onQuoteClick={handleTriggerQuote}
         onAdminToggle={() => setIsAdminMode(!isAdminMode)}
         isAdminMode={isAdminMode}
+        showAdminBtn={showAdminBtn}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         activePage={activePage}
@@ -489,6 +507,7 @@ export default function App() {
       <Footer
         onQuoteClick={() => handleTriggerQuote()}
         onAdminToggle={() => setIsAdminMode(!isAdminMode)}
+        showAdminBtn={showAdminBtn}
         onPageChange={handlePageChange}
       />
 
